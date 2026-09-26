@@ -18,7 +18,7 @@ This repository contains the laboratory programs, experiments, and implementatio
 
 | No. | Experiment | Description |
 | :--- | :--- | :--- |
-| **01** | **Experiment 1** | Parallel Matrix Multiplication (Sequential, OpenMP, MPI, and CUDA)[span_0](start_span)[span_0](end_span) |
+| **01** | **Experiment 1** | Parallel Matrix Multiplication (Sequential, OpenMP, MPI, and CUDA)|
 | **02** | **Experiment 2** | |
 | **03** | **Experiment 3** |  |
 | **04** | **Experiment 4** | |
@@ -33,11 +33,11 @@ This repository contains the laboratory programs, experiments, and implementatio
 
 ## Detailed Experiment 1: Matrix Multiplication Implementation
 
-Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four distinct computing models using matrices initialized with elements equal to $1.0$, resulting in an expected verification value of $C[0][0] = 4000.00$[span_1](start_span)[span_1](end_span).
+Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four distinct computing models using matrices initialized with elements equal to $1.0$, resulting in an expected verification value of $C[0][0] = 4000.00$.
 
 ### 1. Part A - Sequential Matrix Multiplication (Baseline)
-* **Environment:** Windows PowerShell launching WSL2 Ubuntu[span_2](start_span)[span_2](end_span).
-* **Compilation:** `gcc -O2 matrix_sequential.c -o matrix_sequential`[span_3](start_span)[span_3](end_span)
+* **Environment:** Windows PowerShell launching WSL2 Ubuntu.
+* **Compilation:** `gcc -O2 matrix_sequential.c -o matrix_sequential`
 * **Execution Time:** $244.120000$ seconds[span_4](start_span)[span_4](end_span)
 * **Verification:** $C[0][0] = 4000.00$[span_5](start_span)[span_5](end_span)
 
