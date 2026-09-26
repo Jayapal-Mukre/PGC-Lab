@@ -38,20 +38,20 @@ Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four
 ### 1. Part A - Sequential Matrix Multiplication (Baseline)
 * **Environment:** Windows PowerShell launching WSL2 Ubuntu.
 * **Compilation:** `gcc -O2 matrix_sequential.c -o matrix_sequential`
-* **Execution Time:** $244.120000$ seconds[span_4](start_span)[span_4](end_span)
-* **Verification:** $C[0][0] = 4000.00$[span_5](start_span)[span_5](end_span)
+* **Execution Time:** $244.120000$ seconds
+* **Verification:** $C[0][0] = 4000.00$
 
 ### 2. Part B - OpenMP Matrix Multiplication (Shared Memory)
-* **Environment:** WSL2 Ubuntu with 8 logical CPUs (`export OMP_NUM_THREADS=8`)[span_6](start_span)[span_6](end_span).
-* **Compilation:** `gcc -O2 -fopenmp matrix_openmp.c -o matrix_openmp`[span_7](start_span)[span_7](end_span)
-* **Execution Time:** $30.830434$ seconds[span_8](start_span)[span_8](end_span)
-* **Speedup:** $7.92\times$ over sequential[span_9](start_span)[span_9](end_span)
+* **Environment:** WSL2 Ubuntu with 8 logical CPUs (`export OMP_NUM_THREADS=8`)
+* **Compilation:** `gcc -O2 -fopenmp matrix_openmp.c -o matrix_openmp`
+* **Execution Time:** $30.830434$ seconds
+* **Speedup:** $7.92\times$ over sequential
 
 ### 3. Part C - MPI Distributed Matrix Multiplication
-* **Environment:** A virtual cluster consisting of 1 Master VM and 3 Worker VMs connected via VMware virtual networking[span_10](start_span)[span_10](end_span).
-* **Compilation & Execution:** Managed via `mpicc` and `mpirun` across nodes using process-level row distribution (`MPI_Scatter`, `MPI_Bcast`, `MPI_Gather`)[span_11](start_span)[span_11](end_span).
-* **Execution Time:** $92.979510$ seconds[span_12](start_span)[span_12](end_span)
-* **Speedup:** $2.63\times$ over sequential[span_13](start_span)[span_13](end_span)
+* **Environment:** A virtual cluster consisting of 1 Master VM and 3 Worker VMs connected via VMware virtual networking
+* **Compilation & Execution:** Managed via `mpicc` and `mpirun` across nodes using process-level row distribution (`MPI_Scatter`, `MPI_Bcast`, `MPI_Gather`)
+* **Execution Time:** $92.979510$ seconds
+* **Speedup:** $2.63\times$ over sequential
 
 ### 4. Part D - CUDA Matrix Multiplication (GPU Acceleration)
 
@@ -59,8 +59,7 @@ Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four
 
 | Implementation | Model | Resources | Execution Time | Speedup | Verification |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Sequential** | Single CPU execution[span_18](start_span)[span_18](end_span) | 1 CPU core[span_19](start_span)[span_19](end_span) | $244.120000\text{ s}$[span_20](start_span)[span_20](end_span) | $1.00\times$[span_21](start_span)[span_21](end_span) | $4000.00$[span_22](start_span)[span_22](end_span) |
-| **OpenMP** | Shared memory[span_23](start_span)[span_23](end_span) | 8 CPU threads[span_24](start_span)[span_24](end_span) | $30.830434\text{ s}$[span_25](start_span)[span_25](end_span) | $7.92\times$[span_26](start_span)[span_26](end_span) | $4000.00$[span_27](start_span)[span_27](end_span) |
+| **Sequential** | Single CPU execution[span_18](start_span)[span_18](end_span) | 1 CPU core[span_19](start_span)[span_19](end_span) | $244.120000\text{ s}$[span_20](start_span)[span_20](end_span) | $1.00\times$[span_21](start_span)[span_21](end_span) | $4000.00$| **OpenMP** | Shared memory[span_23](start_span)[span_23](end_span) | 8 CPU threads[span_24](start_span)[span_24](end_span) | $30.830434\text{ s}$[span_25](start_span)[span_25](end_span) | $7.92\times$[span_26](start_span)[span_26](end_span) | $4000.00$[span_27](start_span)[span_27](end_span) |
 | **MPI** | Distributed memory[span_28](start_span)[span_28](end_span) | 4 processes / 4 VMs[span_29](start_span)[span_29](end_span) | $92.979510\text{ s}$[span_30](start_span)[span_30](end_span) | $2.63\times$[span_31](start_span)[span_31](end_span) | $4000.00$[span_32](start_span)[span_32](end_span) |
 | **CUDA** | 
 ---
