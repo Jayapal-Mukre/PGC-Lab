@@ -1,1 +1,116 @@
-# PGC-Lab
+# Parallel and GPU Computing Lab
+
+This repository contains the laboratory programs, experiments, and implementations completed as part of the Parallel and GPU Computing Laboratory.
+
+## Student Information
+
+| Details | Information |
+| :--- | :--- |
+| **Name** | Jayapal Mukre |
+| **Course** | Computer Science and Engineering (AI) |
+| **Semester** | 5th Semester |
+| **Institution** | KLE Technological University, Hubballi |
+| **Academic Year** | 2026–27 |
+
+---
+
+## Experiments
+
+| No. | Experiment | Description |
+| :--- | :--- | :--- |
+| **01** | **Experiment 1** | Parallel Matrix Multiplication (Sequential, OpenMP, MPI, and CUDA)[span_0](start_span)[span_0](end_span) |
+| **02** | **Experiment 2** | Parallel Computing |
+| **03** | **Experiment 3** | Parallel Computing |
+| **04** | **Experiment 4** | GPU Computing |
+| **05** | **Experiment 5** | GPU Computing |
+| **06** | **Experiment 6** | GPU Computing |
+| **07** | **Experiment 7** | GPU Computing |
+| **08** | **Experiment 8** | GPU Computing |
+
+*Experiment details will be updated as the laboratory work progresses.*
+
+---
+
+## Detailed Experiment 1: Matrix Multiplication Implementation
+
+Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four distinct computing models using matrices initialized with elements equal to $1.0$, resulting in an expected verification value of $C[0][0] = 4000.00$[span_1](start_span)[span_1](end_span).
+
+### 1. Part A - Sequential Matrix Multiplication (Baseline)
+* **Environment:** Windows PowerShell launching WSL2 Ubuntu[span_2](start_span)[span_2](end_span).
+* **Compilation:** `gcc -O2 matrix_sequential.c -o matrix_sequential`[span_3](start_span)[span_3](end_span)
+* **Execution Time:** $244.120000$ seconds[span_4](start_span)[span_4](end_span)
+* **Verification:** $C[0][0] = 4000.00$[span_5](start_span)[span_5](end_span)
+
+### 2. Part B - OpenMP Matrix Multiplication (Shared Memory)
+* **Environment:** WSL2 Ubuntu with 8 logical CPUs (`export OMP_NUM_THREADS=8`)[span_6](start_span)[span_6](end_span).
+* **Compilation:** `gcc -O2 -fopenmp matrix_openmp.c -o matrix_openmp`[span_7](start_span)[span_7](end_span)
+* **Execution Time:** $30.830434$ seconds[span_8](start_span)[span_8](end_span)
+* **Speedup:** $7.92\times$ over sequential[span_9](start_span)[span_9](end_span)
+
+### 3. Part C - MPI Distributed Matrix Multiplication
+* **Environment:** A virtual cluster consisting of 1 Master VM and 3 Worker VMs connected via VMware virtual networking[span_10](start_span)[span_10](end_span).
+* **Compilation & Execution:** Managed via `mpicc` and `mpirun` across nodes using process-level row distribution (`MPI_Scatter`, `MPI_Bcast`, `MPI_Gather`)[span_11](start_span)[span_11](end_span).
+* **Execution Time:** $92.979510$ seconds[span_12](start_span)[span_12](end_span)
+* **Speedup:** $2.63\times$ over sequential[span_13](start_span)[span_13](end_span)
+
+### 4. Part D - CUDA Matrix Multiplication (GPU Acceleration)
+* **Environment:** NVIDIA RTX 4500 Ada Generation GPU using CUDA Toolkit (`nvcc`)[span_14](start_span)[span_14](end_span).
+* **Configuration:** Grid size of $250 \times 250$ blocks with block sizes of $16 \times 16$ threads ($16,000,000$ total logical threads)[span_15](start_span)[span_15](end_span).
+* **Execution Time:** Kernel time = $0.146443$ s; Total phase time = $0.165004$ seconds[span_16](start_span)[span_16](end_span).
+* **Speedup:** $1479.48\times$ over sequential[span_17](start_span)[span_17](end_span)
+
+### Summary Performance Table
+
+| Implementation | Model | Resources | Execution Time | Speedup | Verification |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Sequential** | Single CPU execution[span_18](start_span)[span_18](end_span) | 1 CPU core[span_19](start_span)[span_19](end_span) | $244.120000\text{ s}$[span_20](start_span)[span_20](end_span) | $1.00\times$[span_21](start_span)[span_21](end_span) | $4000.00$[span_22](start_span)[span_22](end_span) |
+| **OpenMP** | Shared memory[span_23](start_span)[span_23](end_span) | 8 CPU threads[span_24](start_span)[span_24](end_span) | $30.830434\text{ s}$[span_25](start_span)[span_25](end_span) | $7.92\times$[span_26](start_span)[span_26](end_span) | $4000.00$[span_27](start_span)[span_27](end_span) |
+| **MPI** | Distributed memory[span_28](start_span)[span_28](end_span) | 4 processes / 4 VMs[span_29](start_span)[span_29](end_span) | $92.979510\text{ s}$[span_30](start_span)[span_30](end_span) | $2.63\times$[span_31](start_span)[span_31](end_span) | $4000.00$[span_32](start_span)[span_32](end_span) |
+| **CUDA** | GPU parallelism[span_33](start_span)[span_33](end_span) | NVIDIA RTX 4500 Ada[span_34](start_span)[span_34](end_span) | $0.165004\text{ s}$[span_35](start_span)[span_35](end_span) | $1479.48\times$[span_36](start_span)[span_36](end_span) | $4000.00$[span_37](start_span)[span_37](end_span) |
+
+---
+
+## Topics Covered
+
+* Parallel Computing[span_38](start_span)[span_38](end_span)
+* GPU Computing[span_39](start_span)[span_39](end_span)
+* Multithreading
+* Parallel Algorithms
+* CUDA Programming[span_40](start_span)[span_40](end_span)
+* CPU vs GPU Performance[span_41](start_span)[span_41](end_span)
+* Parallel Processing
+* Performance Analysis[span_42](start_span)[span_42](end_span)
+* Speedup and Efficiency[span_43](start_span)[span_43](end_span)
+
+---
+
+## Technologies Used
+
+* C[span_44](start_span)[span_44](end_span)
+* C++[span_45](start_span)[span_45](end_span)
+* Python
+* CUDA[span_46](start_span)[span_46](end_span)
+* OpenMP[span_47](start_span)[span_47](end_span)
+* NVIDIA GPU Computing[span_48](start_span)[span_48](end_span)
+
+---
+
+## Repository Structure
+
+```text
+PGC-Lab/
+│
+├── Experiment-01/
+│   ├── sequential/
+│   ├── openmp/
+│   ├── mpi/
+│   └── cuda/
+├── Experiment-02/
+├── Experiment-03/
+├── Experiment-04/
+├── Experiment-05/
+├── Experiment-06/
+├── Experiment-07/
+├── Experiment-08/
+│
+└── README.md
