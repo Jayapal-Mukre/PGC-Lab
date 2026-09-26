@@ -19,11 +19,11 @@ This repository contains the laboratory programs, experiments, and implementatio
 | No. | Experiment | Description |
 | :--- | :--- | :--- |
 | **01** | **Experiment 1** | Parallel Matrix Multiplication (Sequential, OpenMP, MPI, and CUDA) |
-| **02** | **Experiment 2** | Parallel Computing |
-| **03** | **Experiment 3** | Parallel Computing |
-| **04** | **Experiment 4** | GPU Computing |
-| **05** | **Experiment 5** | GPU Computing |
-| **06** | **Experiment 6** | GPU Computing |
+| **02** | **Experiment 2** | 
+| **03** | **Experiment 3** | 
+| **04** | **Experiment 4** | 
+| **05** | **Experiment 5** | 
+| **06** | **Experiment 6** | 
 | **07** | **Experiment 7** | GPU Computing |
 | **08** | **Experiment 8** | GPU Computing |
 
