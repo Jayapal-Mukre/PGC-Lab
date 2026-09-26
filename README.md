@@ -66,8 +66,7 @@ Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four
 | **Sequential** | Single CPU execution[span_18](start_span)[span_18](end_span) | 1 CPU core[span_19](start_span)[span_19](end_span) | $244.120000\text{ s}$[span_20](start_span)[span_20](end_span) | $1.00\times$[span_21](start_span)[span_21](end_span) | $4000.00$[span_22](start_span)[span_22](end_span) |
 | **OpenMP** | Shared memory[span_23](start_span)[span_23](end_span) | 8 CPU threads[span_24](start_span)[span_24](end_span) | $30.830434\text{ s}$[span_25](start_span)[span_25](end_span) | $7.92\times$[span_26](start_span)[span_26](end_span) | $4000.00$[span_27](start_span)[span_27](end_span) |
 | **MPI** | Distributed memory[span_28](start_span)[span_28](end_span) | 4 processes / 4 VMs[span_29](start_span)[span_29](end_span) | $92.979510\text{ s}$[span_30](start_span)[span_30](end_span) | $2.63\times$[span_31](start_span)[span_31](end_span) | $4000.00$[span_32](start_span)[span_32](end_span) |
-| **CUDA** | GPU parallelism[span_33](start_span)[span_33](end_span) | NVIDIA RTX 4500 Ada[span_34](start_span)[span_34](end_span) | $0.165004\text{ s}$[span_35](start_span)[span_35](end_span) | $1479.48\times$[span_36](start_span)[span_36](end_span) | $4000.00$[span_37](start_span)[span_37](end_span) |
-
+| **CUDA** | 
 ---
 
 ## Topics Covered
