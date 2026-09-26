@@ -54,10 +54,6 @@ Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four
 * **Speedup:** 2.63× over sequential
 
 ### 4. Part D - CUDA Matrix Multiplication (GPU Acceleration)
-* **Environment:** NVIDIA RTX 4500 Ada Generation GPU using CUDA Toolkit (`nvcc`).
-* **Configuration:** Grid size of 250 × 250 blocks with block sizes of 16 × 16 threads (16,000,000 total logical threads).
-* **Execution Time:** Kernel time = 0.146443 s; Total phase time = 0.165004 seconds.
-* **Speedup:** 1479.48× over sequential
 
 ### Summary Performance Table
 
@@ -66,7 +62,7 @@ Experiment 1 implements a 4000 × 4000 matrix multiplication problem across four
 | **Sequential** | Single CPU execution | 1 CPU core | 244.120000 s | 1.00× | 4000.00 |
 | **OpenMP** | Shared memory | 8 CPU threads | 30.830434 s | 7.92× | 4000.00 |
 | **MPI** | Distributed memory | 4 processes / 4 VMs | 92.979510 s | 2.63× | 4000.00 |
-| **CUDA** | GPU parallelism | NVIDIA RTX 4500 Ada | 0.165004 s | 1479.48× | 4000.00 |
+| **CUDA** |
 
 ---
 
