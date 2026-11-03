@@ -27,7 +27,7 @@ This repository contains the laboratory programs, experiments, and implementatio
 | **07** | **Experiment 7** | GPU Computing |
 | **08** | **Experiment 8** | GPU Computing |
 
-*Experiment details will be updated as the laboratory work progresses.*
+*Experiment details are documented in each experiment folder.*
 
 ---
 
